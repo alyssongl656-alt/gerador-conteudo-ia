@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
 <head>
@@ -16,9 +15,7 @@
 
 <body>
 
-
   <p class="etiqueta">🤖 Gerador de Conteúdo com Inteligência Artificial</p>
-
 
   <h1>
     Gere sua página
@@ -30,22 +27,17 @@
 
   <div class="caixa-entrada">
     <textarea class="texto-pagina" placeholder="Descreva seu negócio. Ex: Cafeteria, Mercado, etc."></textarea>
-
-    <button onclick="gerarCodigo()"> ⚡Gerar</button>
+    <button class="botao-gerar">⚡ Gerar</button>
   </div>
+
+  <p class="mensagem-erro" style="display: none;"></p>
 
   <div class="caixa-resultado">
     <p class="bloco-codigo"></p>
-    <iframe class="bloco-site"
-    ></iframe>
+    <iframe class="bloco-site"></iframe>
   </div>
 
-
-
+  <script src="scripts.js"></script>
 </body>
-
-<script src="scripts.js">
-
-</script>
 
 </html>
