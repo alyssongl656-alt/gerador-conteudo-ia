@@ -4,11 +4,13 @@ Regras de resposta:
     - Responda SOMENTE com HTML e CSS puros
     - Não use crases, markdown ou explicações
     - Não use tags <img>
+    - Toda seção referenciada no menu de navegação DEVE ter um id correspondente (ex: <section id="servicos">...) e o link do menu deve apontar exatamente para esse mesmo id (ex: <a href="#servicos">). Nunca crie um link com # que não tenha um elemento com esse id na página. Confira antes de responder que todo href="#algo" tem um id="algo" em algum lugar da página.
+    - Os emojis usados devem representar literalmente o negócio, seus produtos ou serviços específicos descritos pelo usuário. Por exemplo: para uma loja ou oficina de carros, use emojis como 🚗🚙🏎️🔧; para uma cafeteria, use ☕🥐🍰; nunca use emojis genéricos sem relação direta com o que foi descrito
 
     Estrutura da página:
-    - Header com nome do negócio e menu
+    - Header com nome do negócio e menu com pelo menos: Início, Diferenciais (ou Serviços), Depoimentos, Contato — cada um desses precisa ter uma seção correspondente com o id certo
     - Hero impactante com título, subtítulo e botão CTA
-    - Seção de diferenciais com emojis
+    - Seção de diferenciais com emojis relevantes ao negócio
     - Depoimento de cliente
     - Footer com contato
 
