@@ -5,21 +5,27 @@
     font-family: "Inter", sans-serif;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
     background: #09090b;
     color: #fafafa;
-    padding: 30px 10px;
+    padding: 30px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 p.etiqueta {
     color: #ffffff;
+    text-align: center;
 }
 
 h1 {
-    font-size: 52px;
+    font-size: clamp(28px, 6vw, 52px);
     font-weight: 800;
     color: #fafafa;
     line-height: 1.25;
@@ -34,8 +40,9 @@ span {
 p.subtitulo {
     color: #71717a;
     margin-top: 16px;
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     text-align: center;
+    max-width: 90%;
 }
 
 .caixa-entrada {
@@ -67,14 +74,15 @@ textarea {
 
 button {
     width: 20%;
-    min-width: 110px;
-    padding: 10px 24px;
+    min-width: 100px;
+    padding: 10px 16px;
     color: #ffffff;
     background: #0284c7;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 14px;
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
@@ -110,48 +118,85 @@ button:disabled {
     max-width: 1400px;
     display: flex;
     flex-wrap: wrap;
-    padding: 24px;
+    padding: 16px;
     margin-top: 40px;
     background: #111114;
     border-radius: 12px;
     border: 1px solid #27272a;
-    gap: 24px;
+    gap: 16px;
 }
 
 .bloco-codigo {
-    flex: 1 1 300px;
+    flex: 1 1 280px;
     background: #0c0c0f;
-    padding: 20px;
+    padding: 16px;
     font-size: 12px;
     color: #22c55e;
     white-space: pre-wrap;
     overflow: auto;
-    height: 600px;
+    height: 500px;
     border-radius: 12px;
     border: 1px solid #27272a;
 }
 
 .bloco-site {
-    flex: 2 1 500px;
-    height: 600px;
+    flex: 2 1 320px;
+    height: 500px;
     border: 1px solid #27272a;
     border-radius: 12px;
     background-color: #1e1e1e;
+    width: 100%;
 }
 
+/* Tablets (768px e menos) */
+@media (max-width: 768px) {
+    .caixa-resultado {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .bloco-codigo,
+    .bloco-site {
+        flex: 1 1 100%;
+        height: 400px;
+    }
+}
+
+/* Celulares (640px e menos) */
 @media (max-width: 640px) {
-    h1 {
-        font-size: 36px;
-        height: auto;
+    body {
+        padding: 20px 12px;
     }
 
     .caixa-entrada {
         flex-direction: column;
         gap: 10px;
+        padding: 10px;
     }
 
     textarea,
     button {
         width: 100%;
+    }
+
+    textarea {
+        font-size: 16px; /* evita zoom automático no iOS */
+    }
+
+    .bloco-codigo,
+    .bloco-site {
+        height: 320px;
+    }
+}
+
+/* Celulares bem pequenos (380px e menos) */
+@media (max-width: 380px) {
+    p.etiqueta {
+        font-size: 13px;
+    }
+
+    .bloco-codigo,
+    .bloco-site {
+        height: 260px;
     }
 }
