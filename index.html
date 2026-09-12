@@ -9,7 +9,8 @@
     rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href=" styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' font-size='80'><text y='.9em'>🤖</text></svg>">
   <title>Criador de Sites IA</title>
 </head>
 
@@ -25,16 +26,36 @@
 
   <p class="subtitulo">Descreva o seu negócio e veja a IA criar uma página profissional em segundos.</p>
 
+  <div class="estilos">
+    <span class="estilos-label">Estilo:</span>
+    <button class="chip-estilo ativo" data-estilo="moderno">Moderno</button>
+    <button class="chip-estilo" data-estilo="minimalista">Minimalista</button>
+    <button class="chip-estilo" data-estilo="colorido">Colorido</button>
+    <button class="chip-estilo" data-estilo="corporativo">Corporativo</button>
+  </div>
+
   <div class="caixa-entrada">
-    <textarea class="texto-pagina" placeholder="Descreva seu negócio. Ex: Cafeteria, Mercado, etc."></textarea>
+    <div class="campo-texto">
+      <textarea class="texto-pagina" maxlength="500" placeholder="Descreva seu negócio. Ex: Cafeteria, Mercado, etc."></textarea>
+      <span class="contador">0/500</span>
+    </div>
     <button class="botao-gerar">⚡ Gerar</button>
   </div>
 
   <p class="mensagem-erro" style="display: none;"></p>
 
-  <div class="caixa-resultado">
-    <p class="bloco-codigo"></p>
-    <iframe class="bloco-site"></iframe>
+  <div class="historico" style="display: none;"></div>
+
+  <div class="caixa-resultado" style="display: none;">
+    <div class="acoes-resultado">
+      <button class="botao-copiar">📋 Copiar código</button>
+      <button class="botao-baixar">⬇️ Baixar página</button>
+      <button class="botao-tentar-de-novo">🔁 Tentar de novo</button>
+    </div>
+    <div class="resultado-corpo">
+      <p class="bloco-codigo"></p>
+      <iframe class="bloco-site"></iframe>
+    </div>
   </div>
 
   <script src="scripts.js"></script>
