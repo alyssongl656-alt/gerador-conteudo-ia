@@ -132,9 +132,18 @@ button:disabled {
     0%, 80%, 100% { opacity: 0.25; }
     40% { opacity: 1; }
 }
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.robo {
+    display: inline-block;
+    animation: flutuar 2.4s ease-in-out infinite;
+}
 
 @media (prefers-reduced-motion: reduce) {
-    p.etiqueta, h1, p.subtitulo, .caixa-entrada, .ponto {
+   p.etiqueta, h1, p.subtitulo, .caixa-entrada, .ponto, .robo {
         animation: none !important;
     }
 }
