@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #09090b;
+    color: #fafafa;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p.etiqueta {
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 52px;
+    font-weight: 800;
+    color: #fafafa;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+span {
+    color: #38bdf8;
+}
+
+p.subtitulo {
+    color: #71717a;
+    margin-top: 16px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.caixa-entrada {
+    width: 100%;
+    max-width: 620px;
+    background: #141419;
+    border-radius: 16px;
+    padding: 12px;
+    margin-top: 30px;
+    display: flex;
+    border: 1px solid #27272a;
+    transition: border-color 0.2s ease;
+}
+
+.caixa-entrada:focus-within {
+    border-color: #38bdf8;
+}
+
+textarea {
+   width: 80%;
+   resize: none;
+   outline: none;
+   background: transparent;
+   padding: 8px;
+   color: #fafafa;
+   font-size: 15px;
+   border: none;
+}
+
+button {
+    width: 20%;
+    min-width: 110px;
+    padding: 10px 24px;
+    color: #ffffff;
+    background: #0284c7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+    background: #0369a1;
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background: #27272a;
+    color: #71717a;
+    cursor: not-allowed;
+}
+
+.mensagem-erro {
+    width: 100%;
+    max-width: 620px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #2a1215;
+    border: 1px solid #7f1d1d;
+    color: #fca5a5;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.caixa-resultado {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24px;
+    margin-top: 40px;
+    background: #111114;
+    border-radius: 12px;
+    border: 1px solid #27272a;
+    gap: 24px;
+}
+
+.bloco-codigo {
+    flex: 1 1 300px;
+    background: #0c0c0f;
+    padding: 20px;
+    font-size: 12px;
+    color: #22c55e;
+    white-space: pre-wrap;
+    overflow: auto;
+    height: 600px;
+    border-radius: 12px;
+    border: 1px solid #27272a;
+}
+
+.bloco-site {
+    flex: 2 1 500px;
+    height: 600px;
+    border: 1px solid #27272a;
+    border-radius: 12px;
+    background-color: #1e1e1e;
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 36px;
+        height: auto;
+    }
+
+    .caixa-entrada {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    textarea,
+    button {
+        width: 100%;
+    }
+}
