@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    background: #09090b;
-    color: #fafafa;
+    background: #17140F;
+    color: #F5F1EA;
     padding: 30px 16px;
     display: flex;
     flex-direction: column;
@@ -20,45 +20,51 @@ body {
 }
 
 p.etiqueta {
-    color: #ffffff;
+    color: #BA7517;
+    font-weight: 600;
+    letter-spacing: 0.3px;
     text-align: center;
+    animation: entrar 0.6s ease-out both;
 }
 
 h1 {
     font-size: clamp(28px, 6vw, 52px);
     font-weight: 800;
-    color: #fafafa;
+    color: #F5F1EA;
     line-height: 1.25;
     margin-bottom: 8px;
     text-align: center;
+    animation: entrar 0.6s ease-out 0.1s both;
 }
 
 span {
-    color: #38bdf8;
+    color: #D9A441;
 }
 
 p.subtitulo {
-    color: #71717a;
+    color: #8f887a;
     margin-top: 16px;
     font-size: clamp(14px, 2.5vw, 18px);
     text-align: center;
     max-width: 90%;
+    animation: entrar 0.6s ease-out 0.2s both;
 }
 
 .caixa-entrada {
     width: 100%;
     max-width: 620px;
-    background: #141419;
+    background: #211D17;
     border-radius: 16px;
     padding: 12px;
     margin-top: 30px;
     display: flex;
-    border: 1px solid #27272a;
+    border: 1px solid #3a3226;
     transition: border-color 0.2s ease;
+    animation: entrar 0.6s ease-out 0.3s both;
 }
 
 .caixa-entrada:focus-within {
-    border-color: #38bdf8;
+    border-color: #BA7517;
 }
 
 textarea {
@@ -67,27 +73,31 @@ textarea {
    outline: none;
    background: transparent;
    padding: 8px;
-   color: #fafafa;
+   color: #F5F1EA;
    font-size: 15px;
    border: none;
+}
+
+textarea::placeholder {
+    color: #6b6357;
 }
 
 button {
     width: 20%;
     min-width: 100px;
     padding: 10px 16px;
-    color: #ffffff;
-    background: #0284c7;
+    color: #412402;
+    background: #BA7517;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
 button:hover:not(:disabled) {
-    background: #0369a1;
+    background: #D9A441;
 }
 
 button:active:not(:disabled) {
@@ -95,9 +105,38 @@ button:active:not(:disabled) {
 }
 
 button:disabled {
-    background: #27272a;
-    color: #71717a;
+    background: #3a3226;
+    color: #8f887a;
     cursor: not-allowed;
+}
+
+.ponto {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    margin-left: 3px;
+    animation: pulsar 1.2s infinite;
+}
+
+.ponto:nth-child(2) { animation-delay: 0.15s; }
+.ponto:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes entrar {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulsar {
+    0%, 80%, 100% { opacity: 0.25; }
+    40% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    p.etiqueta, h1, p.subtitulo, .caixa-entrada, .ponto {
+        animation: none !important;
+    }
 }
 
 .mensagem-erro {
@@ -105,9 +144,9 @@ button:disabled {
     max-width: 620px;
     margin-top: 12px;
     padding: 10px 14px;
-    background: #2a1215;
-    border: 1px solid #7f1d1d;
-    color: #fca5a5;
+    background: #2a1512;
+    border: 1px solid #6b2f1f;
+    color: #f0a687;
     border-radius: 10px;
     font-size: 14px;
     text-align: center;
@@ -120,35 +159,34 @@ button:disabled {
     flex-wrap: wrap;
     padding: 16px;
     margin-top: 40px;
-    background: #111114;
+    background: #1c1811;
     border-radius: 12px;
-    border: 1px solid #27272a;
+    border: 1px solid #3a3226;
     gap: 16px;
 }
 
 .bloco-codigo {
     flex: 1 1 280px;
-    background: #0c0c0f;
+    background: #120f0b;
     padding: 16px;
     font-size: 12px;
-    color: #22c55e;
+    color: #d8cbb9;
     white-space: pre-wrap;
     overflow: auto;
     height: 500px;
     border-radius: 12px;
-    border: 1px solid #27272a;
+    border: 1px solid #3a3226;
 }
 
 .bloco-site {
     flex: 2 1 320px;
     height: 500px;
-    border: 1px solid #27272a;
+    border: 1px solid #3a3226;
     border-radius: 12px;
     background-color: #1e1e1e;
     width: 100%;
 }
 
-/* Tablets (768px e menos) */
 @media (max-width: 768px) {
     .caixa-resultado {
         padding: 12px;
@@ -162,7 +200,6 @@ button:disabled {
     }
 }
 
-/* Celulares (640px e menos) */
 @media (max-width: 640px) {
     body {
         padding: 20px 12px;
@@ -180,7 +217,7 @@ button:disabled {
     }
 
     textarea {
-        font-size: 16px; /* evita zoom automático no iOS */
+        font-size: 16px;
     }
 
     .bloco-codigo,
@@ -189,7 +226,6 @@ button:disabled {
     }
 }
 
-/* Celulares bem pequenos (380px e menos) */
 @media (max-width: 380px) {
     p.etiqueta {
         font-size: 13px;
